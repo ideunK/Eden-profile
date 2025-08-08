@@ -8,31 +8,26 @@
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;700&display=swap" rel="stylesheet">
 <script src="https://cdn.tailwindcss.com"></script>
+<link href="https://fonts.googleapis.com/css2?family=Gowun+Dodum&display=swap" rel="stylesheet">
+<link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css" />
 <style>
     body {
-        font-family: 'Quicksand', sans-serif;
+        font-family: 'Quicksand', 'Pretendard', sans-serif;
         background: linear-gradient(
-  to bottom,
-  #ffcfa9 0%,   /* 밝은 주황 */
-  #ffcfa9 20%,
-  #e6faff 65%,  /* 밝은 하늘 */
-  #e6faff 100%
-);
-        font-size: 16px;
+            to bottom,
+            #ffcfa9 0%,
+            #ffcfa9 20%,
+            #e6faff 65%,
+            #e6faff 100%
+        );
+        font-size: 100%;
     }
-    /* 모바일 전용 폰트 & 버튼 크기 조정 */
+    body :lang(ko) {
+        font-size: 0.8em;
+    }
     @media (max-width: 640px) {
         body {
             font-size: 14px;
-        }
-        .icon-btn {
-            width: 2rem;
-            height: 2rem;
-            font-size: 1.2rem;
-        }
-        .main-btn {
-            font-size: 0.85rem;
-            padding: 0.4rem 0.5rem;
         }
         nav a {
             font-size: 0.8rem;
@@ -42,24 +37,21 @@
 </head>
 <body class="bg-gray-100 flex items-center justify-center min-h-screen p-4">
 
-<div class="main-container bg-white w-full max-w-md mx-auto rounded-lg shadow-lg overflow-hidden">
+<div class="main-container bg-white w-[80%] max-w-sm mx-auto rounded-lg shadow-lg overflow-hidden">
 
     <!-- 상단 바 -->
     <div class="bg-gray-200 px-6 py-3 flex items-center justify-between border-b border-gray-300">
         <div class="flex items-center space-x-2">
             <span class="material-icons text-gray-600 text-sm cursor-pointer hover:text-black" onclick="history.back()">arrow_back_ios</span>
             <span class="material-icons text-gray-600 text-sm cursor-pointer hover:text-black" onclick="history.forward()">arrow_forward_ios</span>
-            
             <span class="material-icons text-gray-600">home</span>
         </div>
-
         <div class="flex-grow mx-4">
             <div class="bg-white rounded-full flex items-center px-4 py-1 border border-gray-300">
                 <span class="material-icons text-gray-500">search</span>
                 <input class="bg-transparent focus:outline-none w-full ml-2" placeholder="Leo x Izu" type="text"/>
             </div>
         </div>
-
         <div class="flex items-center space-x-2">
             <span class="material-icons text-[#FF8558]">favorite</span>
             <span class="material-icons text-[#A0D8E7]">favorite</span>
@@ -75,63 +67,145 @@
             <a class="text-gray-700" href="guest.html">GUEST</a>
         </nav>
 
-        <!-- 프로필 섹션 -->
+        <!-- 프로필 + 슬라이더 -->
         <div class="flex flex-col md:flex-row gap-4">
             <!-- 프로필 이미지 -->
             <div class="flex-shrink-0 flex justify-center md:justify-start">
-                <img alt="Profile picture" class="w-32 h-32 rounded-lg object-cover border-2 border-gray-300" 
-     src="img/profile.jpg"/>
+                <img alt="Profile picture" class="w-32 h-32 rounded-lg object-cover border-2 border-gray-300" src="img/profile.jpg"/>
             </div>
 
-            <!-- 소개글 + 버튼 -->
+            <!-- 슬라이더 -->
             <div class="flex flex-col flex-grow">
-                <!-- 소개글 -->
-                <div>
-                    <h2 class="inline-block bg-[#FF8558] text-white text-sm font-bold px-3 py-1 rounded-md mb-2">about me</h2>
-                    <p class="text-gray-700 text-sm">
-                        Hi there! I'm Noemi. [she/her]<br/>
-                        <span class="font-bold text-[#A0D8E7]">languages:</span> english and italian<br/>
-                        <span class="font-bold text-[#A0D8E7]">hobbies:</span> web and graphic design, marketing, coding, drawing, reading.
-                    </p>
-                </div>
-                <div class="mt-4">
-                    <h2 class="inline-block bg-[#FF8558] text-white text-sm font-bold px-3 py-1 rounded-md mb-2">other</h2>
-                    <p class="text-gray-700 text-sm">
-                        info info info info info info info info info info info info info.
-                    </p>
-                </div>
+                <div class="relative overflow-hidden">
+                    <!-- 슬라이드 래퍼 -->
+                    <div id="slider" class="flex transition-transform duration-300" style="transform: translateX(0%);">
+                        
+                        <!-- About me -->
+                        <div class="w-full flex-shrink-0 p-2">
+    <div class="flex items-center mb-2">
+        <i class="fa-solid fa-chess-knight text-[#FF8558] text-sm mr-1"></i>
+        About me
+    </div>
+    <ul class="text-gray-700 text-sm space-y-1">
+        <li class="relative pl-3 before:content-[''] before:w-1 before:h-1 before:bg-[#A0D8E7] 
+                   before:rounded-full before:absolute before:left-0 before:top-[0.5em]">
+            20↑ <b>(성인만 와주세요)</b>
+        </li>
+        <li class="relative pl-3 before:content-[''] before:w-1 before:h-1 before:bg-[#A0D8E7] 
+                   before:rounded-full before:absolute before:left-0 before:top-[0.5em]">
+            일상 앙스타 판소 웹툰
+        </li>
+        <li class="relative pl-3 before:content-[''] before:w-1 before:h-1 before:bg-[#A0D8E7] 
+                   before:rounded-full before:absolute before:left-0 before:top-[0.5em]">
+            이별은 <b>블락</b>
+        </li>
+        <li class="relative pl-3 before:content-[''] before:w-1 before:h-1 before:bg-[#A0D8E7] 
+                   before:rounded-full before:absolute before:left-0 before:top-[0.5em]">
+            남의 대화에 맘찍、끼어들기 잦아요<br>→겹친 한정
+        </li>
+        <li class="relative pl-3 before:content-[''] before:w-1 before:h-1 before:bg-[#A0D8E7] 
+                   before:rounded-full before:absolute before:left-0 before:top-[0.5em]">
+            욕、무지성 소비 전시 조금 있습니다
+        </li>
+        <li class="relative pl-3 before:content-[''] before:w-1 before:h-1 before:bg-[#A0D8E7] 
+                   before:rounded-full before:absolute before:left-0 before:top-[0.5em]">
+            좋아하는 걸로 눈치 안보는 탐라가 좋아요
+        </li>
+    </ul>
+</div>
 
-                <!-- 버튼 모음 -->
-                <div class="mt-4 flex flex-col space-y-2">
-                    <div class="grid grid-cols-4 gap-2">
-                        <a class="icon-btn bg-gray-200 rounded-md flex items-center justify-center" href="#"><span class="material-icons text-gray-700">style</span></a>
-                        <a class="icon-btn bg-gray-200 rounded-md flex items-center justify-center" href="#"><span class="material-icons text-gray-700">push_pin</span></a>
-                        <a class="icon-btn bg-gray-200 rounded-md flex items-center justify-center" href="#"><span class="material-icons text-gray-700">grid_view</span></a>
-                        <a class="icon-btn bg-gray-200 rounded-md flex items-center justify-center" href="#"><span class="material-icons text-gray-700">code</span></a>
-                        <a class="icon-btn bg-gray-200 rounded-md flex items-center justify-center" href="#"><span class="material-icons text-gray-700">notes</span></a>
-                        <a class="icon-btn bg-gray-200 rounded-md flex items-center justify-center" href="#"><span class="material-icons text-gray-700">reddit</span></a>
-                        <a class="icon-btn bg-gray-200 rounded-md flex items-center justify-center" href="#"><span class="material-icons text-gray-700">close</span></a>
-                        <a class="icon-btn bg-gray-200 rounded-md flex items-center justify-center" href="#"><span class="material-icons text-gray-700">photo_camera</span></a>
+                        <!-- ETC -->
+                        <div class="w-full flex-shrink-0 p-2">
+    <div class="flex items-center mb-2">
+        <i class="fa-solid fa-chess-knight text-[#FF8558] text-sm mr-1"></i>
+        ETC
+    </div>
+    <ul class="text-gray-700 text-sm space-y-1">
+        <li class="relative pl-3 before:content-[''] before:w-1 before:h-1 before:bg-[#A0D8E7] 
+                   before:rounded-full before:absolute before:left-0 before:top-[0.5em]">
+            일상 위주로 굴러갑니다.
+        </li>
+        <li class="relative pl-3 before:content-[''] before:w-1 before:h-1 before:bg-[#A0D8E7] 
+                   before:rounded-full before:absolute before:left-0 before:top-[0.5em]">
+            셀털 많아요!
+        </li>
+        <li class="relative pl-3 before:content-[''] before:w-1 before:h-1 before:bg-[#A0D8E7] 
+                   before:rounded-full before:absolute before:left-0 before:top-[0.5em]">
+            이든 / 든 / 이디 편하게 불러주세요
+        </li>
+        <li class="relative pl-3 before:content-[''] before:w-1 before:h-1 before:bg-[#A0D8E7] 
+                   before:rounded-full before:absolute before:left-0 before:top-[0.5em]">
+            너무 오래 방치된 계정은 블블하고 있습니다.<br>블락이 아니면 다시 걸어주셔도 돼요!
+        </li>
+        <li class="relative pl-3 before:content-[''] before:w-1 before:h-1 before:bg-[#A0D8E7] 
+                   before:rounded-full before:absolute before:left-0 before:top-[0.5em]">
+            삐계는 때 되면 모시러가요 =33
+        </li>
+        <li class="relative pl-3 before:content-[''] before:w-1 before:h-1 before:bg-[#A0D8E7] 
+                   before:rounded-full before:absolute before:left-0 before:top-[0.5em]">
+            삐계 딱히 숨기고 있지 않습니다.<br>삐계에서도 편하게 불러주셔도 괜찮아요.
+        </li>
+    </ul>
+</div>
                     </div>
-                    <a class="main-btn bg-gray-200 p-2 rounded-md flex items-center text-sm" href="mailto:hello@curlynoemi.com">
-                        <span class="material-icons text-gray-700 mr-2">email</span>
-                        hello@curlynoemi.com
-                    </a>
-                    <a class="main-btn bg-gray-200 p-2 rounded-md flex items-center text-sm" href="#">
-                        <span class="material-icons text-gray-700 mr-2">language</span>
-                        main carrd
-                    </a>
+
+                    <!-- 네비게이션 점 -->
+                    <div class="flex justify-center mt-2 space-x-2">
+                        <span class="dot w-2 h-2 bg-[#FF8558] rounded-full cursor-pointer" data-slide="0"></span>
+                        <span class="dot w-2 h-2 bg-gray-300 rounded-full cursor-pointer" data-slide="1"></span>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 
     <!-- 하단 -->
-    <div class="bg-[#FF8558] p-2 text-center text-white font-bold">
-        main carrd
+    <div class="bg-[#FF8558] p-2 text-center text-white font-bold w-full">
+        <h2 class="inline-flex items-center text-white text-sm font-bold px-3 py-1 rounded-md mb-0">
+            <img src="img/Fleur-de-lis-fill.png" 
+                 alt="icon" 
+                 class="w-4 h-4 mr-1 filter brightness-0 invert" />
+        </h2>
     </div>
-
 </div>
+
+<!-- 슬라이더 스크립트 -->
+<script>
+const slider = document.getElementById('slider');
+const dots = document.querySelectorAll('.dot');
+let currentSlide = 0;
+
+// 점 클릭
+dots.forEach(dot => {
+    dot.addEventListener('click', () => {
+        currentSlide = parseInt(dot.dataset.slide);
+        updateSlide();
+    });
+});
+
+function updateSlide() {
+    slider.style.transform = `translateX(-${currentSlide * 100}%)`;
+    dots.forEach((d, i) => {
+        d.classList.toggle('bg-[#FF8558]', i === currentSlide);
+        d.classList.toggle('bg-gray-300', i !== currentSlide);
+    });
+}
+
+// 스와이프 기능
+let startX = 0;
+slider.addEventListener('touchstart', e => {
+    startX = e.touches[0].clientX;
+});
+slider.addEventListener('touchend', e => {
+    let endX = e.changedTouches[0].clientX;
+    if (startX - endX > 50 && currentSlide < 1) { // 오른쪽 스와이프
+        currentSlide++;
+    } else if (endX - startX > 50 && currentSlide > 0) { // 왼쪽 스와이프
+        currentSlide--;
+    }
+    updateSlide();
+});
+</script>
 
 </body>
 </html>
