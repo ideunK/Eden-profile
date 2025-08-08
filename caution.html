@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Eden - Resources</title>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;700&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<style>
+    body {
+        font-family: 'Quicksand', sans-serif;
+        background: linear-gradient(
+            to bottom,
+            #ffcfa9 0%,   
+            #ffcfa9 20%,
+            #e6faff 65%,  
+            #e6faff 100%
+        );
+        font-size: 16px;
+    }
+    @media (max-width: 640px) {
+        body { font-size: 14px; }
+        .icon-btn { width: 2rem; height: 2rem; font-size: 1.2rem; }
+        .main-btn { font-size: 0.85rem; padding: 0.4rem 0.5rem; }
+        nav a { font-size: 0.8rem; }
+    }
+</style>
+</head>
+<body class="bg-gray-100 flex items-center justify-center min-h-screen p-4">
+
+<div class="main-container bg-white w-full max-w-md mx-auto rounded-lg shadow-lg overflow-hidden">
+
+    <!-- 상단 바 -->
+    <div class="bg-gray-200 px-6 py-3 flex items-center justify-between border-b border-gray-300">
+        <div class="flex items-center space-x-2">
+            <span class="material-icons text-gray-600 text-sm cursor-pointer hover:text-black" onclick="history.back()">arrow_back_ios</span>
+            <span class="material-icons text-gray-600 text-sm cursor-pointer hover:text-black" onclick="history.forward()">arrow_forward_ios</span>
+            
+            <span class="material-icons text-gray-600">home</span>
+        </div>
+
+        <div class="flex-grow mx-4">
+            <div class="bg-white rounded-full flex items-center px-4 py-1 border border-gray-300">
+                <span class="material-icons text-gray-500">search</span>
+                <input class="bg-transparent focus:outline-none w-full ml-2" placeholder="Leo x Izu" type="text"/>
+            </div>
+        </div>
+
+        <div class="flex items-center space-x-2">
+            <span class="material-icons text-[#FF8558]">favorite</span>
+            <span class="material-icons text-[#A0D8E7]">favorite</span>
+        </div>
+    </div>
+
+    <!-- 메뉴 -->
+    <div class="p-4">
+        <nav class="flex justify-around border-b border-gray-300 pb-2 mb-4 text-sm font-medium">
+            <a class="text-gray-700" href="main.html">ABOUT</a>
+            <a class="text-gray-700" href="ENST.html">ENST</a>
+            <a class="text-gray-700 font-bold" href="caution.html">CAUTION</a>
+            <a class="text-gray-700" href="guest.html">GUEST</a>
+        </nav>
+
+        <!-- 페이지 컨텐츠 -->
+        <div class="text-gray-700 text-sm">
+            <h2 class="inline-block bg-[#A0D8E7] text-white text-sm font-bold px-3 py-1 rounded-md mb-2">resources</h2>
+            <p>여기에 자료, 링크, 파일 등 원하는 내용을 넣으면 됩니다.</p>
+        </div>
+    </div>
+
+    <!-- 하단 -->
+    <div class="bg-[#FF8558] p-2 text-center text-white font-bold">
+        main carrd
+    </div>
+
+</div>
+
+</body>
+</html>
